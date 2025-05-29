@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 const Drone = ({ position, scrollOffset }: { position: [number, number, number], scrollOffset: number }) => {
   const droneRef = useRef<THREE.Group>(null);
-  const propellerRefs = useRef<THREE.Mesh[]>([]);
+  const propellerRefs = useRef<(THREE.Mesh | null)[]>([]);
 
   useFrame((state) => {
     if (droneRef.current) {
@@ -44,7 +44,7 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
         <meshStandardMaterial color="#666666" />
       </Box>
       
-      {/* Propellers */}
+      {/* Propellers - using mesh with proper geometry */}
       {[
         [-0.4, 0.05, -0.4],
         [0.4, 0.05, -0.4],
@@ -54,7 +54,7 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
         <mesh
           key={index}
           ref={(el) => {
-            if (el) propellerRefs.current[index] = el;
+            propellerRefs.current[index] = el;
           }}
           position={pos as [number, number, number]}
         >
@@ -103,7 +103,10 @@ const DroneCanvas = ({ scrollOffset }: { scrollOffset: number }) => {
     <div className="fixed inset-0 pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 0], fov: 75 }}
-        style={{ background: 'transparent' }}
+        gl={{ alpha: true, antialias: true }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
       >
         <ambientLight intensity={0.3} />
         <directionalLight position={[10, 10, 5]} intensity={0.5} />
