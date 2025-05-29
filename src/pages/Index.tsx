@@ -290,16 +290,6 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
-          
-          <div className="text-center">
-            <div className="bg-gradient-to-r from-cyan-900/30 to-purple-900/30 p-8 rounded-3xl border border-cyan-500/20 max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold mb-4 text-cyan-300">Proven Results</h3>
-              <p className="text-xl text-gray-300 mb-4">
-                "Brands reported <span className="text-green-400 font-bold">5x engagement</span> vs traditional ads"
-              </p>
-              <p className="text-gray-400">Average viral reach: 2.5M social media impressions per show</p>
-            </div>
-          </div>
         </div>
       </section>
 
