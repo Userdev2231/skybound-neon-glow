@@ -1,12 +1,14 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Box, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Drone = ({ position, scrollOffset }: { position: [number, number, number], scrollOffset: number }) => {
   const droneRef = useRef<THREE.Group>(null);
-  const propellerRefs = useRef<(THREE.Mesh | null)[]>([]);
+  const propeller1Ref = useRef<THREE.Mesh>(null);
+  const propeller2Ref = useRef<THREE.Mesh>(null);
+  const propeller3Ref = useRef<THREE.Mesh>(null);
+  const propeller4Ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (droneRef.current) {
@@ -22,9 +24,9 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
     }
 
     // Rotate propellers
-    propellerRefs.current.forEach((propeller) => {
-      if (propeller) {
-        propeller.rotation.y += 0.3;
+    [propeller1Ref, propeller2Ref, propeller3Ref, propeller4Ref].forEach((ref) => {
+      if (ref.current) {
+        ref.current.rotation.y += 0.3;
       }
     });
   });
@@ -32,44 +34,51 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
   return (
     <group ref={droneRef} position={position}>
       {/* Drone body */}
-      <Box args={[0.3, 0.1, 0.3]} position={[0, 0, 0]}>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[0.3, 0.1, 0.3]} />
         <meshStandardMaterial color="#444444" />
-      </Box>
+      </mesh>
       
       {/* Drone arms */}
-      <Box args={[0.8, 0.02, 0.02]} position={[0, 0, 0]}>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[0.8, 0.02, 0.02]} />
         <meshStandardMaterial color="#666666" />
-      </Box>
-      <Box args={[0.02, 0.02, 0.8]} position={[0, 0, 0]}>
+      </mesh>
+      <mesh position={[0, 0, 0]}>
+        <boxGeometry args={[0.02, 0.02, 0.8]} />
         <meshStandardMaterial color="#666666" />
-      </Box>
+      </mesh>
       
-      {/* Propellers - using mesh with proper geometry */}
-      {[
-        [-0.4, 0.05, -0.4],
-        [0.4, 0.05, -0.4],
-        [-0.4, 0.05, 0.4],
-        [0.4, 0.05, 0.4]
-      ].map((pos, index) => (
-        <mesh
-          key={index}
-          ref={(el) => {
-            propellerRefs.current[index] = el;
-          }}
-          position={pos as [number, number, number]}
-        >
-          <cylinderGeometry args={[0.15, 0.15, 0.01, 8]} />
-          <meshStandardMaterial color="#333333" transparent opacity={0.7} />
-        </mesh>
-      ))}
+      {/* Propellers */}
+      <mesh ref={propeller1Ref} position={[-0.4, 0.05, -0.4]}>
+        <cylinderGeometry args={[0.15, 0.15, 0.01, 8]} />
+        <meshStandardMaterial color="#333333" transparent opacity={0.7} />
+      </mesh>
+      
+      <mesh ref={propeller2Ref} position={[0.4, 0.05, -0.4]}>
+        <cylinderGeometry args={[0.15, 0.15, 0.01, 8]} />
+        <meshStandardMaterial color="#333333" transparent opacity={0.7} />
+      </mesh>
+      
+      <mesh ref={propeller3Ref} position={[-0.4, 0.05, 0.4]}>
+        <cylinderGeometry args={[0.15, 0.15, 0.01, 8]} />
+        <meshStandardMaterial color="#333333" transparent opacity={0.7} />
+      </mesh>
+      
+      <mesh ref={propeller4Ref} position={[0.4, 0.05, 0.4]}>
+        <cylinderGeometry args={[0.15, 0.15, 0.01, 8]} />
+        <meshStandardMaterial color="#333333" transparent opacity={0.7} />
+      </mesh>
       
       {/* LED lights */}
-      <Sphere args={[0.02]} position={[0.15, -0.05, 0.15]}>
+      <mesh position={[0.15, -0.05, 0.15]}>
+        <sphereGeometry args={[0.02]} />
         <meshStandardMaterial color="#00ff00" emissive="#00ff00" emissiveIntensity={0.5} />
-      </Sphere>
-      <Sphere args={[0.02]} position={[-0.15, -0.05, -0.15]}>
+      </mesh>
+      <mesh position={[-0.15, -0.05, -0.15]}>
+        <sphereGeometry args={[0.02]} />
         <meshStandardMaterial color="#ff0000" emissive="#ff0000" emissiveIntensity={0.5} />
-      </Sphere>
+      </mesh>
     </group>
   );
 };
