@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const Drone = ({ position, scrollOffset }: { position: [number, number, number], scrollOffset: number }) => {
+const Drone = ({ position }: { position: [number, number, number] }) => {
   const droneRef = useRef<THREE.Group>(null);
   const propeller1Ref = useRef<THREE.Mesh>(null);
   const propeller2Ref = useRef<THREE.Mesh>(null);
@@ -12,12 +12,8 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
 
   useFrame((state) => {
     if (droneRef.current) {
-      // Gentle floating motion
+      // Gentle floating motion only
       droneRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.1;
-      
-      // Move based on scroll
-      droneRef.current.position.x = position[0] + scrollOffset * 0.002;
-      droneRef.current.position.z = position[2] + Math.sin(scrollOffset * 0.001) * 2;
       
       // Gentle rotation
       droneRef.current.rotation.y += 0.005;
@@ -83,15 +79,13 @@ const Drone = ({ position, scrollOffset }: { position: [number, number, number],
   );
 };
 
-const DroneSwarm = ({ scrollOffset }: { scrollOffset: number }) => {
+const DroneSwarm = () => {
   const drones = [
     [4, 2, -5],
     [-3, 1, -8],
     [6, 3, -12],
     [-5, 2.5, -15],
-    [2, 1.5, -18],
-    [-4, 3.5, -22],
-    [5, 2, -25]
+    [2, 1.5, -18]
   ];
 
   return (
@@ -100,27 +94,23 @@ const DroneSwarm = ({ scrollOffset }: { scrollOffset: number }) => {
         <Drone 
           key={index} 
           position={position as [number, number, number]} 
-          scrollOffset={scrollOffset}
         />
       ))}
     </>
   );
 };
 
-const DroneCanvas = ({ scrollOffset }: { scrollOffset: number }) => {
+const DroneCanvas = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-0">
+    <div className="absolute inset-0 pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 0], fov: 75 }}
         gl={{ alpha: true, antialias: true }}
-        onCreated={({ gl }) => {
-          gl.setClearColor(0x000000, 0);
-        }}
       >
         <ambientLight intensity={0.3} />
         <directionalLight position={[10, 10, 5]} intensity={0.5} />
         <pointLight position={[-10, -10, -5]} intensity={0.3} color="#4fc3f7" />
-        <DroneSwarm scrollOffset={scrollOffset} />
+        <DroneSwarm />
       </Canvas>
     </div>
   );
