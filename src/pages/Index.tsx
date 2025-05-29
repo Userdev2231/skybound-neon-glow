@@ -1,9 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowDown, CheckCircle, Star, Zap, Globe, Users, Building, Rocket, Heart, Megaphone, ShoppingBag, MapPin, Clock, Target, TrendingUp, Play, Mail, Phone, MapPin as Location } from 'lucide-react';
+import DroneCanvas from '@/components/DroneCanvas';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -19,7 +19,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative">
+      {/* 3D Drone Animation */}
+      <DroneCanvas scrollOffset={scrollY} />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-blue-900/20 to-gray-800">
         {/* Animated Background */}
@@ -59,7 +62,7 @@ const Index = () => {
       </section>
 
       {/* What is Drone Advertising */}
-      <section id="what-is" className="py-20 bg-gray-800/50">
+      <section id="what-is" className="py-20 bg-gray-800/50 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -125,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Why Use Drone Advertising */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
@@ -186,7 +189,7 @@ const Index = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -220,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
@@ -253,7 +256,7 @@ const Index = () => {
       </section>
 
       {/* ROI Benefits */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 via-blue-900/10 to-gray-800">
+      <section className="py-20 bg-gradient-to-b from-gray-900 via-blue-900/10 to-gray-800 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
@@ -309,7 +312,7 @@ const Index = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gray-800 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
@@ -355,7 +358,7 @@ const Index = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
@@ -421,7 +424,7 @@ const Index = () => {
       </section>
 
       {/* Visual Showreel */}
-      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
@@ -460,7 +463,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-20 bg-gradient-to-r from-gray-900 via-blue-900/20 to-purple-900/20">
+      <section id="cta" className="py-20 bg-gradient-to-r from-gray-900 via-blue-900/20 to-purple-900/20 relative z-10">
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -511,7 +514,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-800 py-12">
+      <footer className="bg-gray-900 border-t border-gray-800 py-12 relative z-10">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-8">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-4">
