@@ -343,71 +343,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-20 bg-gray-900 relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
-              Investment Packages
-            </h2>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="bg-gray-800/50 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:scale-105 group">
-              <CardHeader>
-                <CardTitle className="text-2xl text-cyan-300">Starter Show</CardTitle>
-                <div className="text-4xl font-bold text-white mt-4">₹10L</div>
-                <CardDescription className="text-gray-400">100 Drones</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />5-minute show duration</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Basic logo formations</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />HD video recording</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Social media package</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gradient-to-b from-purple-900/20 to-cyan-900/20 border-purple-500/40 hover:border-purple-500/60 transition-all duration-300 hover:transform hover:scale-105 group relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-4 py-1">Most Popular</Badge>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl text-purple-300">Premium Experience</CardTitle>
-                <div className="text-4xl font-bold text-white mt-4">₹30L</div>
-                <CardDescription className="text-gray-400">500 Drones</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />15-minute spectacular</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />3D storytelling & animations</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Interactive QR codes</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />4K multi-angle recording</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Full marketing support</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 hover:transform hover:scale-105 group">
-              <CardHeader>
-                <CardTitle className="text-2xl text-yellow-300">Enterprise Scale</CardTitle>
-                <div className="text-4xl font-bold text-white mt-4">Custom</div>
-                <CardDescription className="text-gray-400">1000+ Drones</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Multi-city synchronized shows</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Custom choreography</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />International coordination</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Dedicated project team</li>
-                  <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Complete media production</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+     {/* Pricing */}
+<section className="py-20 bg-gray-900 relative z-10">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">
+        Investment Packages
+      </h2>
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-8">
+      {/* Starter Show */}
+      <Card className="bg-gray-900 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:transform hover:scale-105 group">
+        <CardHeader>
+          <CardTitle className="text-2xl text-cyan-300">Starter Show</CardTitle>
+          <div className="text-4xl font-bold text-white mt-4">₹10L</div>
+          <CardDescription className="text-gray-400">100 Drones</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3 text-gray-300">
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />5-minute show duration</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Basic logo formations</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />HD video recording</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Social media package</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Premium Experience */}
+      <Card className="bg-gray-900 border-purple-500/40 hover:border-purple-500/60 transition-all duration-300 hover:transform hover:scale-105 group relative">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <Badge className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-4 py-1">Most Popular</Badge>
         </div>
-      </section>
+        <CardHeader>
+          <CardTitle className="text-2xl text-purple-300">Premium Experience</CardTitle>
+          <div className="text-4xl font-bold text-white mt-4">₹30L</div>
+          <CardDescription className="text-gray-400">500 Drones</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3 text-gray-300">
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />15-minute spectacular</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />3D storytelling & animations</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Interactive QR codes</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />4K multi-angle recording</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Full marketing support</li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Enterprise Scale */}
+      <Card className="bg-gray-900 border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 hover:transform hover:scale-105 group">
+        <CardHeader>
+          <CardTitle className="text-2xl text-yellow-300">Enterprise Scale</CardTitle>
+          <div className="text-4xl font-bold text-white mt-4">Custom</div>
+          <CardDescription className="text-gray-400">1000+ Drones</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-3 text-gray-300">
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Multi-city synchronized shows</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Custom choreography</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />International coordination</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Dedicated project team</li>
+            <li className="flex items-center"><CheckCircle className="h-5 w-5 text-green-400 mr-2" />Complete media production</li>
+          </ul>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+
 
      
                 {/* Animated background effect */}
