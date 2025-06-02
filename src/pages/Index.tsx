@@ -410,27 +410,7 @@ const Index = () => {
       </Card>
     </div>
   </div>
-</section>
-
-
-     
-                {/* Animated background effect */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="grid grid-cols-12 gap-1 h-full">
-                    {Array.from({ length: 144 }, (_, i) => (
-                      <div 
-                        key={i} 
-                        className="bg-cyan-400 animate-pulse"
-                        style={{ animationDelay: `${i * 0.05}s` }}
-                      ></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+</section>          
 
       {/* CTA Section */}
       <section id="cta" className="py-20 bg-gradient-to-r from-gray-900 via-blue-900/20 to-purple-900/20 relative z-10">
