@@ -409,27 +409,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Visual Showreel */}
-      <section className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 relative z-10">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Experience the Magic
-            </h2>
-          </div>
-          
-          <div className="relative max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-900 to-blue-900/30 rounded-3xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 group">
-              <div className="relative aspect-video bg-gray-800 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="bg-cyan-500/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-500/30 transition-colors">
-                      <Play className="h-10 w-10 text-cyan-400" />
-                    </div>
-                    <p className="text-cyan-300 font-semibold">Watch Our Latest Drone Show</p>
-                    <p className="text-gray-400 text-sm mt-2">4K | 2.5M Views | Viral Sensation</p>
-                  </div>
-                </div>
+     
                 {/* Animated background effect */}
                 <div className="absolute inset-0 opacity-20">
                   <div className="grid grid-cols-12 gap-1 h-full">
@@ -488,11 +468,11 @@ const Index = () => {
             <div className="flex justify-center space-x-8 text-gray-400">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-cyan-400" />
-                <span>+91 98765 43210</span>
+                <span>+91 8050853225</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-cyan-400" />
-                <span>hello@skyshows.com</span>
+                <span>inquiry@theadproject.com</span>
               </div>
             </div>
           </div>
@@ -514,7 +494,7 @@ const Index = () => {
           
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500">
-              © 2024 SkyShows. All rights reserved. | Revolutionizing advertising through aerial innovation.
+              © 2025 The Ad Project. All rights reserved. | Revolutionizing advertising through aerial innovation.
             </p>
           </div>
         </div>
